@@ -1,0 +1,21 @@
+$kind: http-request
+name: Create Staff / Admin User
+url: "{{base_url}}/api/admin/users"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Petugas Lapangan",
+      "email": "petugas@wastetrack.local",
+      "password": "petugas123",
+      "role": "petugas"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 2000

@@ -1,0 +1,18 @@
+$kind: http-request
+description: "Pilihan rewardId: 'wallet-10' (2500 poin), 'wallet-25' (6000 poin), 'groceries' (4000 poin)."
+url: "{{base_url}}/api/rewards/redeem"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "rewardId": "wallet-10"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 1000

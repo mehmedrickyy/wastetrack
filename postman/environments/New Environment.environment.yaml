@@ -1,0 +1,5 @@
+name: New Environment
+values:
+  - key: base_url
+    value: 'http://localhost:4000'
+    description: WasteTrack backend API base URL

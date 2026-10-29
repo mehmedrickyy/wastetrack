@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{base_url}}/api/pickups"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 1000

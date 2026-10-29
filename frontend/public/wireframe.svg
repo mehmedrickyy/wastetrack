@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" role="img" aria-labelledby="title description">
+  <title id="title">WasteTrack dashboard wireframe</title>
+  <desc id="description">Low-fidelity desktop and mobile dashboard layouts for the WasteTrack waste management application.</desc>
+  <style>
+    .canvas { fill: #f1f2ef; }
+    .frame { fill: #fff; stroke: #9da29d; stroke-width: 1.5; }
+    .surface { fill: #f7f8f6; stroke: #c8ccc7; stroke-width: 1; }
+    .block { fill: #e8eae7; }
+    .block-dark { fill: #d8dcd7; }
+    .line { fill: none; stroke: #b9beb9; stroke-width: 1; }
+    .line-dark { fill: none; stroke: #929992; stroke-width: 1.25; }
+    .dashed { fill: none; stroke: #b9beb9; stroke-width: 1; stroke-dasharray: 4 4; }
+    .label { fill: #3f4540; font: 600 12px Arial, sans-serif; }
+    .small { fill: #6d736e; font: 10px Arial, sans-serif; }
+    .tiny { fill: #858b86; font: 8px Arial, sans-serif; letter-spacing: .8px; }
+    .heading { fill: #303631; font: 700 20px Arial, sans-serif; }
+    .subheading { fill: #414742; font: 700 13px Arial, sans-serif; }
+    .metric { fill: #343a35; font: 700 23px Arial, sans-serif; }
+    .mobile-heading { fill: #303631; font: 700 16px Arial, sans-serif; }
+    .mobile-copy { fill: #666d67; font: 9px Arial, sans-serif; }
+    .tag { fill: #e8eae7; stroke: #b9beb9; stroke-width: 1; }
+  </style>
+
+  <rect class="canvas" width="1600" height="980" />
+  <text class="tiny" x="48" y="40">WASTETRACK / LOW-FIDELITY WIREFRAME</text>
+  <text class="label" x="48" y="62">Dashboard nasabah</text>
+  <text class="small" x="1210" y="62">Desktop 1440 px</text>
+  <text class="small" x="1440" y="62">Mobile 375 px</text>
+
+  <rect class="frame" x="40" y="82" width="1130" height="850" rx="8" />
+  <rect class="surface" x="40" y="82" width="193" height="850" rx="8" />
+  <rect fill="#f7f8f6" x="225" y="82" width="945" height="58" />
+  <line class="line" x1="225" y1="140" x2="1170" y2="140" />
+  <rect class="block-dark" x="58" y="100" width="26" height="26" rx="6" />
+  <path class="line-dark" d="M65 113l5 5 8-10M66 107l-3 6m13 5 5-2" />
+  <text class="label" x="93" y="118">WasteTrack</text>
+
+  <text class="tiny" x="58" y="166">MENU UTAMA</text>
+  <rect class="block-dark" x="52" y="181" width="168" height="36" rx="5" />
+  <rect class="block" x="65" y="192" width="14" height="14" rx="3" />
+  <text class="label" x="88" y="203">Dashboard</text>
+  <rect class="line" x="65" y="232" width="15" height="15" rx="3" />
+  <text class="small" x="88" y="244">Setoran</text>
+  <rect class="line" x="65" y="267" width="15" height="15" rx="3" />
+  <text class="small" x="88" y="279">Riwayat</text>
+  <rect class="line" x="65" y="302" width="15" height="15" rx="3" />
+  <text class="small" x="88" y="314">Tukar poin</text>
+  <rect class="line" x="65" y="337" width="15" height="15" rx="3" />
+  <text class="small" x="88" y="349">Analitik</text>
+
+  <rect class="surface" x="55" y="720" width="163" height="115" rx="6" />
+  <rect class="block" x="69" y="735" width="23" height="23" rx="5" />
+  <text class="small" x="69" y="779">Jejak baikmu</text>
+  <text class="metric" x="69" y="808">14,9 kg</text>
+  <rect class="block" x="69" y="819" width="133" height="5" rx="3" />
+  <rect class="block-dark" x="69" y="819" width="81" height="5" rx="3" />
+  <line class="line" x1="55" y1="852" x2="218" y2="852" />
+  <circle class="block-dark" cx="75" cy="880" r="15" />
+  <text class="small" x="99" y="878">Aulia Sari</text>
+  <text class="tiny" x="99" y="892">ANGGOTA</text>
+
+  <text class="small" x="252" y="117">Ruang kerja</text>
+  <text class="small" x="321" y="117">/</text>
+  <text class="label" x="337" y="117">Dashboard</text>
+  <rect class="surface" x="1005" y="97" width="99" height="29" rx="4" />
+  <text class="small" x="1020" y="115">Nasabah</text>
+  <path class="line" d="M1083 108l4 4 4-4" />
+  <circle class="line" cx="1130" cy="111" r="13" />
+
+  <text class="tiny" x="252" y="174">SABTU, 3 OKTOBER 2026</text>
+  <text class="heading" x="252" y="201">Halo, Aulia</text>
+  <text class="small" x="252" y="220">Hari yang baik untuk membuat perubahan kecil.</text>
+  <rect class="block-dark" x="967" y="182" width="170" height="38" rx="5" />
+  <text class="label" x="989" y="206">+  Jadwalkan jemput</text>
+
+  <rect class="surface" x="252" y="241" width="885" height="143" rx="7" />
+  <text class="tiny" x="276" y="268">LANGKAH KECIL, DAMPAK BESAR</text>
+  <text class="heading" x="276" y="300">Jaga lingkungan dari rumah.</text>
+  <text class="small" x="276" y="323">Setiap kilogram sampah terpilah punya cerita baru.</text>
+  <rect class="block-dark" x="276" y="342" width="123" height="24" rx="4" />
+  <text class="small" x="291" y="358">Lihat dampakmu</text>
+  <line class="line-dark" x1="814" y1="261" x2="814" y2="362" />
+  <text class="tiny" x="839" y="278">JEJAK BAIK TOTAL</text>
+  <text class="metric" x="839" y="311">14,9 kg</text>
+  <rect class="block" x="839" y="329" width="262" height="6" rx="3" />
+  <rect class="block-dark" x="839" y="329" width="118" height="6" rx="3" />
+  <text class="tiny" x="839" y="354">TARGET BULAN INI  /  30 KG</text>
+
+  <rect class="surface" x="252" y="397" width="211" height="88" rx="6" />
+  <rect class="surface" x="477" y="397" width="211" height="88" rx="6" />
+  <rect class="surface" x="702" y="397" width="211" height="88" rx="6" />
+  <rect class="surface" x="927" y="397" width="210" height="88" rx="6" />
+  <text class="small" x="269" y="420">Poin tersedia</text>
+  <text class="metric" x="269" y="454">4.280</text>
+  <text class="tiny" x="269" y="473">+12% DARI BULAN LALU</text>
+  <text class="small" x="494" y="420">Total setoran</text>
+  <text class="metric" x="494" y="454">12 kali</text>
+  <text class="tiny" x="494" y="473">3 SETORAN BULAN INI</text>
+  <text class="small" x="719" y="420">Sampah terpilah</text>
+  <text class="metric" x="719" y="454">14,9 kg</text>
+  <text class="tiny" x="719" y="473">+18% DARI BULAN LALU</text>
+  <text class="small" x="944" y="420">Dalam perjalanan</text>
+  <text class="metric" x="944" y="454">2 aktif</text>
+  <text class="tiny" x="944" y="473">STATUS PENJEMPUTAN</text>
+
+  <rect class="frame" x="252" y="500" width="553" height="210" rx="6" />
+  <text class="tiny" x="272" y="523">PERJALANANMU</text>
+  <text class="subheading" x="272" y="545">Setoran minggu ini</text>
+  <text class="metric" x="272" y="579">12,4 kg</text>
+  <text class="small" x="357" y="578">+8,2% vs minggu lalu</text>
+  <line class="dashed" x1="280" y1="600" x2="780" y2="600" />
+  <line class="dashed" x1="280" y1="628" x2="780" y2="628" />
+  <line class="dashed" x1="280" y1="656" x2="780" y2="656" />
+  <rect class="block" x="316" y="626" width="28" height="47" rx="3" />
+  <rect class="block" x="380" y="614" width="28" height="59" rx="3" />
+  <rect class="block" x="444" y="634" width="28" height="39" rx="3" />
+  <rect class="block" x="508" y="604" width="28" height="69" rx="3" />
+  <rect class="block" x="572" y="622" width="28" height="51" rx="3" />
+  <rect class="block-dark" x="636" y="588" width="28" height="85" rx="3" />
+  <rect class="block" x="700" y="610" width="28" height="63" rx="3" />
+  <text class="tiny" x="320" y="691">SEN</text><text class="tiny" x="384" y="691">SEL</text>
+  <text class="tiny" x="448" y="691">RAB</text><text class="tiny" x="512" y="691">KAM</text>
+  <text class="tiny" x="576" y="691">JUM</text><text class="tiny" x="640" y="691">SAB</text>
+  <text class="tiny" x="704" y="691">MIN</text>
+
+  <rect class="frame" x="819" y="500" width="318" height="210" rx="6" />
+  <text class="tiny" x="839" y="523">KONSISTENSI</text>
+  <text class="subheading" x="839" y="545">Target bulanan</text>
+  <circle class="line-dark" cx="900" cy="613" r="42" stroke-width="9" />
+  <path class="line-dark" d="M900 571a42 42 0 1 1-39 58" stroke-width="9" />
+  <text class="label" x="881" y="617">50%</text>
+  <text class="metric" x="963" y="608">14,9 kg</text>
+  <text class="small" x="963" y="626">dari target 30 kg</text>
+  <line class="line" x1="839" y1="667" x2="1117" y2="667" />
+  <text class="small" x="839" y="689">Butuh 15,1 kg lagi untuk target.</text>
+
+  <rect class="frame" x="252" y="726" width="553" height="182" rx="6" />
+  <text class="tiny" x="272" y="750">AKTIVITAS TERBARU</text>
+  <text class="subheading" x="272" y="772">Setoran terakhir</text>
+  <text class="small" x="709" y="770">Lihat semua  →</text>
+  <line class="line" x1="252" y1="787" x2="805" y2="787" />
+  <rect class="block" x="272" y="801" width="22" height="22" rx="4" />
+  <text class="small" x="305" y="811">Plastik</text><text class="tiny" x="305" y="823">WT-24091</text>
+  <text class="small" x="444" y="816">4,8 kg</text><text class="small" x="538" y="816">2 Okt 2026</text>
+  <rect class="tag" x="668" y="803" width="73" height="20" rx="10" /><text class="tiny" x="681" y="816">SELESAI</text>
+  <line class="line" x1="270" y1="836" x2="788" y2="836" />
+  <rect class="block" x="272" y="849" width="22" height="22" rx="4" />
+  <text class="small" x="305" y="859">Kertas</text><text class="tiny" x="305" y="871">WT-24084</text>
+  <text class="small" x="444" y="864">3,2 kg</text><text class="small" x="538" y="864">29 Sep 2026</text>
+  <rect class="tag" x="668" y="851" width="73" height="20" rx="10" /><text class="tiny" x="681" y="864">SELESAI</text>
+
+  <rect class="frame" x="819" y="726" width="318" height="182" rx="6" />
+  <text class="tiny" x="839" y="750">PILAH LEBIH BAIK</text>
+  <text class="subheading" x="839" y="772">Kategori favorit</text>
+  <text class="small" x="839" y="803">Plastik</text><text class="small" x="1070" y="803">4,8 kg</text>
+  <rect class="block" x="839" y="811" width="277" height="6" rx="3" /><rect class="block-dark" x="839" y="811" width="202" height="6" rx="3" />
+  <text class="small" x="839" y="840">Kertas</text><text class="small" x="1070" y="840">3,2 kg</text>
+  <rect class="block" x="839" y="848" width="277" height="6" rx="3" /><rect class="block-dark" x="839" y="848" width="147" height="6" rx="3" />
+  <text class="small" x="839" y="877">Logam</text><text class="small" x="1070" y="877">1,5 kg</text>
+  <rect class="block" x="839" y="885" width="277" height="6" rx="3" /><rect class="block-dark" x="839" y="885" width="92" height="6" rx="3" />
+
+  <rect class="frame" x="1200" y="82" width="360" height="850" rx="24" />
+  <rect class="surface" x="1210" y="92" width="340" height="830" rx="18" />
+  <rect fill="#fff" x="1210" y="92" width="340" height="45" rx="18" />
+  <rect class="block-dark" x="1227" y="105" width="20" height="20" rx="5" />
+  <text class="label" x="1256" y="119">WasteTrack</text>
+  <circle class="line" cx="1521" cy="115" r="10" />
+  <text class="tiny" x="1228" y="160">SABTU, 3 OKTOBER</text>
+  <text class="mobile-heading" x="1228" y="183">Halo, Aulia</text>
+  <text class="mobile-copy" x="1228" y="199">Yuk, pilah sampah hari ini.</text>
+  <rect class="block-dark" x="1228" y="213" width="304" height="92" rx="7" />
+  <text class="tiny" x="1244" y="236">JEJAK BAIK TOTAL</text>
+  <text class="metric" x="1244" y="264">14,9 kg</text>
+  <text class="mobile-copy" x="1244" y="283">Target bulan ini  /  30 kg</text>
+  <rect class="frame" x="1228" y="320" width="304" height="42" rx="5" />
+  <text class="label" x="1294" y="346">+  Jadwalkan jemput</text>
+  <rect class="frame" x="1228" y="378" width="147" height="74" rx="5" />
+  <rect class="frame" x="1385" y="378" width="147" height="74" rx="5" />
+  <text class="mobile-copy" x="1241" y="399">POIN TERSEDIA</text>
+  <text class="label" x="1241" y="427">4.280 poin</text>
+  <text class="mobile-copy" x="1398" y="399">TOTAL SETORAN</text>
+  <text class="label" x="1398" y="427">12 kali</text>
+  <rect class="frame" x="1228" y="466" width="304" height="185" rx="5" />
+  <text class="tiny" x="1243" y="489">AKTIVITAS TERBARU</text>
+  <text class="label" x="1243" y="510">Setoran terakhir</text>
+  <line class="line" x1="1228" y1="522" x2="1532" y2="522" />
+  <rect class="block" x="1243" y="538" width="25" height="25" rx="4" />
+  <text class="small" x="1278" y="548">Plastik</text><text class="tiny" x="1278" y="560">WT-24091</text>
+  <text class="small" x="1462" y="553">4,8 kg</text>
+  <line class="line" x1="1243" y1="575" x2="1517" y2="575" />
+  <rect class="block" x="1243" y="591" width="25" height="25" rx="4" />
+  <text class="small" x="1278" y="601">Kertas</text><text class="tiny" x="1278" y="613">WT-24084</text>
+  <text class="small" x="1462" y="606">3,2 kg</text>
+  <rect class="frame" x="1228" y="669" width="304" height="92" rx="5" />
+  <text class="tiny" x="1243" y="692">TARGET BULANAN</text>
+  <circle class="line-dark" cx="1278" cy="724" r="19" stroke-width="5" />
+  <text class="small" x="1310" y="721">14,9 dari 30 kg</text>
+  <text class="tiny" x="1310" y="738">50% TERCAPAI</text>
+  <line class="line" x1="1228" y1="790" x2="1532" y2="790" />
+  <rect class="block" x="1238" y="810" width="42" height="34" rx="5" />
+  <rect class="line" x="1291" y="810" width="42" height="34" rx="5" />
+  <rect class="line" x="1344" y="810" width="42" height="34" rx="5" />
+  <rect class="line" x="1397" y="810" width="42" height="34" rx="5" />
+  <rect class="line" x="1450" y="810" width="42" height="34" rx="5" />
+  <text class="tiny" x="1247" y="864">HOME</text><text class="tiny" x="1296" y="864">SETOR</text>
+  <text class="tiny" x="1348" y="864">RIWAYAT</text><text class="tiny" x="1405" y="864">POIN</text>
+  <text class="tiny" x="1457" y="864">PROFIL</text>
+  <rect class="block-dark" x="1332" y="97" width="96" height="7" rx="4" />
+</svg>

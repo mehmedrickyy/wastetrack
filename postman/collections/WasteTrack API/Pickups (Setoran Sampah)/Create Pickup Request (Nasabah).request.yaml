@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{base_url}}/api/pickups"
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "pickupDate": "2026-11-01",
+      "pickupAddress": "Jl. Mawar No. 10, Jakarta",
+      "details": [
+        {
+          "categoryId": 1,
+          "weightKg": 5.5
+        }
+      ]
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 2000

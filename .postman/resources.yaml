@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: d8315e65-44f2-481b-82db-b5758f678ec3
+
+cloudResources:
+  collections:
+    ../postman/collections/WasteTrack API: 82514ba0-d390-415c-a9f8-e7e1e1bb99b0
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

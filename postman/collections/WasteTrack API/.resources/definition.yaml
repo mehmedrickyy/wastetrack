@@ -1,0 +1,16 @@
+$kind: collection
+name: WasteTrack API
+description: |-
+  API for WasteTrack — a waste management platform that allows residents (nasabah)
+  to schedule waste pickups, earn points, and redeem rewards. Supports three roles:
+  admin, petugas (field officer), and nasabah (resident).
+
+  Base URL: {{base_url}} (default: http://localhost:4000)
+  Auth: Bearer token via {{auth_token}} (auto-set by Login / Register scripts)
+variables:
+  - key: base_url
+    value: 'http://localhost:4000'
+    description: Backend API base URL
+  - key: auth_token
+    value: ''
+    description: Bearer token — automatically set after Login or Register

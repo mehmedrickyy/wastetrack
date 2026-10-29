@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{base_url}}/api/auth/profile"
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Budi Santoso Edit",
+      "email": "budi@example.com",
+      "phone": "081234567890",
+      "address": "Jl. Melati No. 5, Jakarta"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 4000

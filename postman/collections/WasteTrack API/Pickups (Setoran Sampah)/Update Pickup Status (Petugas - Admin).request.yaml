@@ -1,0 +1,19 @@
+$kind: http-request
+name: Update Pickup Status (Petugas / Admin)
+description: "Status bisa: 'assigned', 'picked_up' (untuk role petugas), atau 'completed' (untuk role admin)."
+url: "{{base_url}}/api/pickups/1/status"
+method: PATCH
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "status": "assigned"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 3000

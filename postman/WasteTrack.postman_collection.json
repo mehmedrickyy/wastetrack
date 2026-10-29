@@ -1,0 +1,398 @@
+{
+  "info": {
+    "_postman_id": "a24fb081-37f2-4e92-942b-5b5c777e5001",
+    "name": "WasteTrack API Tests",
+    "description": "Collection pengujian otomatis endpoint API WasteTrack backend (Express.js)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:4000",
+      "type": "string"
+    },
+    {
+      "key": "auth_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "random_email",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Service status is ok', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.status).to.eql('ok');",
+              "    pm.expect(jsonData.service).to.eql('wastetrack-api');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Categories (Public)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Categories array is returned', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data).to.be.an('array');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/categories",
+          "host": ["{{base_url}}"],
+          "path": ["api", "categories"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth - Register Nasabah",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "const random = Math.floor(Math.random() * 100000);",
+              "pm.collectionVariables.set('random_email', 'tester' + random + '@example.com');"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test('Token returned and saved', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data).to.have.property('token');",
+              "    pm.expect(jsonData.data.user.role).to.eql('nasabah');",
+              "    pm.collectionVariables.set('auth_token', jsonData.data.token);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Testing Nasabah\",\n  \"email\": \"{{random_email}}\",\n  \"password\": \"password123\",\n  \"phone\": \"081234567890\",\n  \"address\": \"Jl. Pengujian No. 1\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/register",
+          "host": ["{{base_url}}"],
+          "path": ["api", "auth", "register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth - Get Current User Profile (/me)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('User profile matches authenticated user', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data.user.email).to.eql(pm.collectionVariables.get('random_email'));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/auth/me",
+          "host": ["{{base_url}}"],
+          "path": ["api", "auth", "me"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth - Update Profile",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Updated name reflects in response', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data.user.name).to.eql('Testing Nasabah Edited');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Testing Nasabah Edited\",\n  \"email\": \"{{random_email}}\",\n  \"phone\": \"081234567899\",\n  \"address\": \"Jl. Pengujian No. 2 Baru\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/profile",
+          "host": ["{{base_url}}"],
+          "path": ["api", "auth", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dashboard Summary",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Dashboard summary contains balance_points', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data).to.have.property('balance_points');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/dashboard/summary",
+          "host": ["{{base_url}}"],
+          "path": ["api", "dashboard", "summary"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pickups - List",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Pickups array returned', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data).to.be.an('array');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/pickups",
+          "host": ["{{base_url}}"],
+          "path": ["api", "pickups"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pickups - Create Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test('Pickup transaction created with status pending', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data.status).to.eql('pending');",
+              "    pm.expect(jsonData.data).to.have.property('transactionId');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"pickupDate\": \"2026-11-01\",\n  \"pickupAddress\": \"Jl. Pengujian No. 2 Baru\",\n  \"details\": [\n    {\n      \"categoryId\": 1,\n      \"weightKg\": 3.5\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/pickups",
+          "host": ["{{base_url}}"],
+          "path": ["api", "pickups"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth - Logout",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Logout successful', function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data.message).to.eql('Berhasil keluar.');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/auth/logout",
+          "host": ["{{base_url}}"],
+          "path": ["api", "auth", "logout"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

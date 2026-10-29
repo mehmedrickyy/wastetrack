@@ -1,0 +1,15 @@
+{
+  "name": "wastetrack",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @wastetrack/frontend",
+    "dev:frontend": "npm run dev --workspace @wastetrack/frontend",
+    "dev:backend": "npm run dev --workspace @wastetrack/backend",
+    "build": "npm run build --workspace @wastetrack/frontend",
+    "lint": "npm run lint --workspace @wastetrack/frontend"
+  }
+}

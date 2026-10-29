@@ -1,0 +1,5 @@
+$kind: http-request
+description: Cek status backend service.
+url: "{{base_url}}/api/health"
+method: GET
+order: 6000

@@ -1,0 +1,9 @@
+$kind: http-request
+name: Get Current User Profile (/me)
+url: "{{base_url}}/api/auth/me"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{auth_token}}"
+order: 3000
